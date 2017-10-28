@@ -19,6 +19,8 @@ import dj_database_url
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+print (PROJECT_ROOT)
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -29,7 +31,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False)
 
-ALLOWED_HOSTS = ['airbnbvisualization.herokuapp.com']
+ALLOWED_HOSTS = ['airbnbvisualization.herokuapp.com', 'localhost']
 
 
 # Application definition
