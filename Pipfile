@@ -17,6 +17,7 @@ dj-database-url = "*"
 Django = "*"
 gunicorn = "*"
 idna = "*"
+numpy = '*'
 "psycopg2" = "*"
 python-decouple = "*"
 pytz = "*"
