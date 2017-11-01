@@ -14,6 +14,9 @@ from .api import parse_get
 
 # Create your views here.
 
+def test(request):
+    return render(request, 'tables.html')
+
 def graph(request):
     return render(request, 'graph.html')
 

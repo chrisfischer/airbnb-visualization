@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-from .views import graph, heat_map, predict, api
+from .views import graph, heat_map, predict, api, test
 
 urlpatterns = [
+    url(r'^test/$', test),
     url(r'^graph/$', graph),
     url(r'^map/$', heat_map),
     url(r'^predict/$', predict),
