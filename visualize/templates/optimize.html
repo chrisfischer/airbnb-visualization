@@ -1,43 +1,24 @@
 {% load static %}
 {% include 'partials/header2.html' %}
 
-        <link href="{% static "style/map.css" %}" rel="stylesheet">
+        <link href="{% static "style/optimize.css" %}" rel="stylesheet">
                 <div class="row">
-                    <div class="button-row col-lg-12">
-                        <div id="options" class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-default btn-lg active">
-                                <input type="radio" name="options" id="option-1" autocomplete="off" checked>Price
-                            </label>
-                            <label class="btn btn-default btn-lg">
-                                <input type="radio" name="options" id="option-2" autocomplete="off">Bedrooms
-                            </label>
-                            <label class="btn btn-default btn-lg">
-                                <input type="radio" name="options" id="option-3" autocomplete="off">Bathrooms
-                            </label>
-                            <label class="btn btn-default btn-lg">
-                                <input type="radio" name="options" id="option-4" autocomplete="off">Square Feet
-                            </label>
-                            <label class="btn btn-default btn-lg">
-                                <input type="radio" name="options" id="option-5" autocomplete="off">Number of Reviews
-                            </label>
-                            <label class="btn btn-default btn-lg">
-                                <input type="radio" name="options" id="option-6" autocomplete="off">Length of House Rules
-                            </label>
-                            <div class="btn-group">
-                                <button id="btnGroupDrop1" type="button" class="btn btn-warning btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Other
-                                </button>
-                                <div class="dropdown-menu wide-dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                    {% for k in data.keys %}
-                                        <label class="btn btn-default no-border">
-                                            <input type="radio" name="options" id="option{{forloop.counter}} " autocomplete="off">{{ k }}
-                                        </label>
-                                    {% endfor %}
-                                </div>
+                    <div class="col-lg-12">
+                        <h3 class="center">Enter coordinates or select from the graph below to find a price that maximizes revenue</h3>
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                <input class="form-control" id="latitude" placeholder="Latitude">
+                            </div>
+                            <div class="col-lg-6">
+                                <input class="form-control" id="longitude" placeholder="Longitude">
                             </div>
                         </div>
                     </div>
-                    
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 id="result" class="center"></h3>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
@@ -47,10 +28,8 @@
     </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIL77gjKi97qZ3-aBHd6veacf7fruhPAk&libraries=visualization"></script>
-<script src="{% static "/heatmap/heatmap.min.js" %}"></script>
-<script src="{% static "/heatmap/gmaps-heatmap.js" %}"></script>
-<script src="{% static "/scripts/map.js" %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIL77gjKi97qZ3-aBHd6veacf7fruhPAk"></script>
+<script src="{% static "/scripts/optimize.js" %}"></script>
 
 
 {% include 'partials/footer.html' %}

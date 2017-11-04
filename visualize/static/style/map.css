@@ -3,6 +3,7 @@
 #map {
   height: 700px;
   margin-top: 20px;
+  border-radius: 5px;
 }
 
 /* margin for row of buttons */
