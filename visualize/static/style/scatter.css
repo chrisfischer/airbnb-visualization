@@ -3,10 +3,31 @@
   margin-top: 10px;
   text-align: center;
 }
+
 /* remove blue highlight on click */
 .btn:focus,.btn:active {
   outline: none !important;
 }
+
 label.focus {
   outline: none !important;
+}
+
+input[type="radio"]{
+    visibility: hidden;
+}
+
+.no-border {
+    margin-left: 10px !important;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+    width: 90%;
+}
+
+.wide-dropdown-menu {
+    min-width: 210px;
+}
+
+#scatterPlot {
+    margin-top: 20px;
 }

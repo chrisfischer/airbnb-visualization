@@ -1,68 +1,61 @@
 {% load static %}
-{% include 'partials/header.html' %}
+{% include 'partials/header2.html' %}
     
         <link href="{% static "style/scatter.css" %}" rel="stylesheet">
-        <div id="page-wrapper">
-            <div class="container-fluid">
+                <div class="row">
+                    
+                    <div class="button-row col-lg-9">
+                        <h3>Suggested</h3>
+                        <div id="pairOptions" class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-primary btn-lg active">
+                                <input type="radio" name="options" id="option1" autocomplete="off" checked>Beds vs. Baths
+                            </label>
+                            <label class="btn btn-primary btn-lg">
+                                <input type="radio" name="options" id="option2" autocomplete="off">Cleanliness vs. Cleaning Fee
+                            </label>
+                            <label class="btn btn-primary btn-lg">
+                                <input type="radio" name="options" id="option3" autocomplete="off">Years a Host vs. Rating
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="button-row col-lg-3">
+                        <h3>All</h3>
+                        <div id="xOptions" class="btn-group" data-toggle="buttons">
+                            <div class="btn-group">
+                                <button id="btnGroupDrop1" type="button" class="btn btn-warning btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    x-Axis
+                                </button>
+                                <div class="dropdown-menu wide-dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                    {% for k in data.keys %}
+                                        <label class="btn btn-default no-border">
+                                            <input type="radio" name="options" id="optionx{{forloop.counter}} " autocomplete="off">{{ k }}
+                                        </label>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div id="yOptions" class="btn-group" data-toggle="buttons">
+                            <div class="btn-group">
+                                <button id="btnGroupDrop1" type="button" class="btn btn-warning btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    y-Axis
+                                </button>
+                                <div class="dropdown-menu wide-dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                    {% for k in data.keys %}
+                                        <label class="btn btn-default no-border">
+                                            <input type="radio" name="options" id="optiony{{forloop.counter}} " autocomplete="off">{{ k }}
+                                        </label>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <canvas id="scatterPlot"></canvas>
                     </div>
                 </div>
-                <div class="row">
-                    <h3>x-Axis</h3>
-                    <div class="button-row col-lg-12">
-                        <div id="xoptions" class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-primary btn-lg active">
-                                <input type="radio" name="options" id="option1" autocomplete="off" checked>Price
-                            </label>
-                            <label class="btn btn-primary btn-lg">
-                                <input type="radio" name="options" id="option2" autocomplete="off">Bedrooms
-                            </label>
-                            <label class="btn btn-primary btn-lg">
-                                <input type="radio" name="options" id="option3" autocomplete="off">Bathrooms
-                            </label>
-                            <label class="btn btn-primary btn-lg">
-                                <input type="radio" name="options" id="option4" autocomplete="off">Square footage
-                            </label>
-                            <label class="btn btn-primary btn-lg">
-                                <input type="radio" name="options" id="option5" autocomplete="off">Average Review Score
-                            </label>
-                            <label class="btn btn-primary btn-lg">
-                                <input type="radio" name="options" id="option5" autocomplete="off">Length of Description
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <h3>y-Axis</h3>
-                    <div class="button-row col-lg-12">
-                        <div id="yoptions" class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-primary btn-lg active">
-                                <input type="radio" name="options" id="option1" autocomplete="off" checked>Price
-                            </label>
-                            <label class="btn btn-primary btn-lg">
-                                <input type="radio" name="options" id="option2" autocomplete="off">Bedrooms
-                            </label>
-                            <label class="btn btn-primary btn-lg">
-                                <input type="radio" name="options" id="option3" autocomplete="off">Bathrooms
-                            </label>
-                            <label class="btn btn-primary btn-lg">
-                                <input type="radio" name="options" id="option4" autocomplete="off">Square footage
-                            </label>
-                            <label class="btn btn-primary btn-lg">
-                                <input type="radio" name="options" id="option5" autocomplete="off">Average Review Score
-                            </label>
-                            <label class="btn btn-primary btn-lg">
-                                <input type="radio" name="options" id="option5" autocomplete="off">Length of Description
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.container-fluid -->
-        </div>
-        <!-- /#page-wrapper -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>

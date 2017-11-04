@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Airbnb Visualization</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "bootstrap/vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static "bootstrap/vendor/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static "bootstrap/vendor/simple-line-icons/css/simple-line-icons.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static "bootstrap/css/new-age.css" %}" rel="stylesheet">
+
+  </head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Airbnb Data Visualization</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#download">Download</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <section class="masthead">
+    <div class="container h-100"><!--
+      <div class="row h-100">
+        <div class="col-lg-12 my-auto">
+          <div class="header-content mx-auto">
+            <h1 id="indicator-title" class="mb-5">Weather Station</h1>
+            <img id="indicator" src="{{ data.icon_url }}">
+            <ul>
+              <p>Location - {{ data.location }}</p>
+              <p>Weather - {{ data.weather }}</p>
+              <p>Wind - {{ data.wind_str }}</p>
+              <p>Tempurature - {{ data.temp }}</p>
+              <p>Humidity - {{ data.humidity }}</p>
+              <p>Preciptation - {{ data.precip }}</p>
+              <p>Last updated on {{ data.observation_time }}</p>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+    <footer>
+      <div class="container">
+        <p>&copy; 2017 Start Bootstrap. All Rights Reserved.</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="#">Privacy</a>
+          </li>
+        </ul>
+      </div>
+    </footer>-->
