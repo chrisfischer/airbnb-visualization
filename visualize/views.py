@@ -14,11 +14,17 @@ from .api import parse_get
 
 # Create your views here.
 
+def blank(request):
+    return render(request, 'blank.html')
+
 def test(request):
     return render(request, 'tables.html')
 
 def graph(request):
     return render(request, 'graph.html')
+
+def scatter(request):
+    return render(request, 'scatter.html')
 
 def heat_map(request):
     return render(request, 'map.html')

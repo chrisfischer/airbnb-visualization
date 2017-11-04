@@ -1,0 +1,12 @@
+/* margin for row of buttons */
+.button-row {
+  margin-top: 10px;
+  text-align: center;
+}
+/* remove blue highlight on click */
+.btn:focus,.btn:active {
+  outline: none !important;
+}
+label.focus {
+  outline: none !important;
+}

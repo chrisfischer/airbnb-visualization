@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-from .views import graph, heat_map, predict, api, test
+from .views import *
 
 urlpatterns = [
+    url(r'^blank/$', blank),
     url(r'^test/$', test),
     url(r'^graph/$', graph),
+    url(r'^scatter/$', scatter),
     url(r'^map/$', heat_map),
     url(r'^predict/$', predict),
     url(r'^api', api, name='api'),

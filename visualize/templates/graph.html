@@ -39,27 +39,27 @@ body {
   function make_chart(data) {
     console.log(data);
     var ctx = document.getElementById('myChart').getContext('2d');
-    ctx = new Chart(ctx, {
-    type: 'scatter',
-    data: {
-      datasets: [{
-            label: 'Scatter Dataset',
-            data: data,
-            pointBorderColor: 'blue',
-            pointBackgroundColor: '#ffffff',
-          }]
-    },
-    options: {
-        scales: {
-            xAxes: [{
-                type: 'linear',
-                position: 'bottom'
+      ctx = new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        datasets: [{
+              label: 'Scatter Dataset',
+              data: data,
+              pointBorderColor: 'blue',
+              pointBackgroundColor: '#ffffff',
             }]
-        }, 
-        showLines: false,
-        animation: false
-    }
-  });
+      },
+      options: {
+          scales: {
+              xAxes: [{
+                  type: 'linear',
+                  position: 'bottom'
+              }]
+          }, 
+          showLines: false,
+          animation: false
+      }
+    });
   }
 
 </script>
