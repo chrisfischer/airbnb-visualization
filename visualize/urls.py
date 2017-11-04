@@ -18,11 +18,11 @@ from django.conf.urls import url
 from .views import *
 
 urlpatterns = [
-    url(r'^graph/$', graph),
+    url(r'^$', index),
     url(r'^scatter/$', scatter),
     url(r'^estimate/$', estimate),
     url(r'^optimize/$', optimize),
     url(r'^map/$', heat_map),
     url(r'^predict_api/$', predict_api),
-    url(r'^api', api, name='api'),
+    url(r'^api', api),
 ]

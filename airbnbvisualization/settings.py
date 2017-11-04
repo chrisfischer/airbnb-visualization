@@ -29,7 +29,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False)
 
-ALLOWED_HOSTS = ['airbnbvisualization.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['airbnboptimization.herokuapp.com', 'localhost']
 
 
 # Application definition

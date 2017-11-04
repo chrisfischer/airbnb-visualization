@@ -16,8 +16,8 @@ from .predict_api import predict_handler
 
 # Create your views here.
 
-def graph(request):
-    return render(request, 'graph.html')
+def index(request):
+    return render(request, 'index.html')
 
 def scatter(request):
     exclude = []
@@ -36,9 +36,6 @@ def optimize(request):
 
 def estimate(request):
     return render(request, 'estimate.html')
-
-def predict(request):
-    return render(request, 'predict.html')
 
 def api(request):
     url = request.META['PATH_INFO']
