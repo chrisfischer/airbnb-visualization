@@ -12,7 +12,7 @@ from django.template.response import TemplateResponse
 from .models import Listing
 
 from .api import parse_get
-from .find_best_price import get_best_price
+from .predict_api import predict_handler
 
 # Create your views here.
 
@@ -34,6 +34,9 @@ def heat_map(request):
 def optimize(request):
     return render(request, 'optimize.html')
 
+def estimate(request):
+    return render(request, 'estimate.html')
+
 def predict(request):
     return render(request, 'predict.html')
 
@@ -46,6 +49,6 @@ def api(request):
 def predict_api(request):
     url = request.META['PATH_INFO']
     o = dict(request.GET)
-    results = get_best_price(o)
+    results = predict_handler(o)
     return JsonResponse(results, safe=False)
 

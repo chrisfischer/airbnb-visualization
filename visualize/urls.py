@@ -20,6 +20,7 @@ from .views import *
 urlpatterns = [
     url(r'^graph/$', graph),
     url(r'^scatter/$', scatter),
+    url(r'^estimate/$', estimate),
     url(r'^optimize/$', optimize),
     url(r'^map/$', heat_map),
     url(r'^predict_api/$', predict_api),

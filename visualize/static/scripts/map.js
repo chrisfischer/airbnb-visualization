@@ -9,6 +9,8 @@ $("#options").change(function() {
 });
 
 $(document).ready(function() {
+    $("#mapLink").addClass("active");
+
     initMap();
     $.getJSON("/api?fields=numericalFields", function(json) {
         numericalFields = json;
@@ -64,7 +66,7 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: sanFrancisco,
-        mapTypeId: 'hybrid'
+        mapTypeId: 'terrain'
     });
 
     heatmap = new HeatmapOverlay(map, 

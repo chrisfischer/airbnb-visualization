@@ -4,7 +4,7 @@ var marker = false; // has the user plotted their location marker?
 var map;
 
 $(document).ready(function() {
-    $("#optimizeLink").addClass("active");
+    $("#estimateLink").addClass("active");
     initMap();
 });
 
@@ -12,14 +12,14 @@ $(document).ready(function() {
 $('#latitude').change(function () {
     var latlng = new google.maps.LatLng(parseFloat(this.value), marker.getPosition().lng());
     marker.setPosition(latlng);
-    updatePrice()
+    updateIncome()
 });
 
 // when enter is pressed, update marker and price
 $('#longitude').change(function () {
     var latlng = new google.maps.LatLng(marker.getPosition().lat(), parseFloat(this.value));
     marker.setPosition(latlng);
-    updatePrice()
+    updateIncome()
 });
 
 // initialize map
@@ -65,15 +65,15 @@ function markerLocation() {
     // Add lat and lng values to a field that we can save.
     document.getElementById('latitude').value = currLoc.lat(); // latitude
     document.getElementById('longitude').value = currLoc.lng(); // longitude
-    updatePrice()
+    updateIncome()
 }
 
 // Make an api call to get the maximizing price
-function updatePrice() {
+function updateIncome() {
     var currLoc = marker.getPosition();
-    var url = '/predict_api?price=' + currLoc.lat() + '+' + currLoc.lng()
+    var url = '/predict_api?income=' + currLoc.lat() + '+' + currLoc.lng()
     $.getJSON(url, function(json) {
-        $('#result')[0].innerText = '$' + json + ' / night';
+        $('#result')[0].innerText = '$' + json + ' / week';
     }).fail(function() {
         $('#result')[0].innerText = '';
     })

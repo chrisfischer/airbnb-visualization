@@ -1,0 +1,16 @@
+
+#map {
+  height: 500px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+#result {
+    height: 50px;
+    margin-top: 25px;
+}
+
+.center {
+    text-align: center;
+}

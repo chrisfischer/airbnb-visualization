@@ -10,6 +10,8 @@ var ylabel = "Bathrooms";
 var xlabel = "Bedrooms";
     
 $(document).ready(function() {
+    $("#scatterLink").addClass("active");
+
     // get numerical fields dictionary
     $.getJSON("/api?fields=numericalFields", function(json) {
         numericalFields = json;
@@ -48,6 +50,21 @@ $("#pairOptions").on('change', function() {
     });
 });
 
+Chart.pluginService.register({
+    beforeDraw: function (chart, easing) {
+        if (chart.config.options.chartArea && chart.config.options.chartArea.backgroundColor) {
+            var helpers = Chart.helpers;
+            var ctx = chart.chart.ctx;
+            var chartArea = chart.chartArea;
+
+            ctx.save();
+            ctx.fillStyle = chart.config.options.chartArea.backgroundColor;
+            ctx.fillRect(chartArea.left, chartArea.top, chartArea.right - chartArea.left, chartArea.bottom - chartArea.top);
+            ctx.restore();
+        }
+    }
+});
+
 
 function setLabelsToPair(desc) {
     switch (desc) {
@@ -74,8 +91,8 @@ function descriptionToLabel(desc) {
 }
 
 function makeChart(data, xlabel, ylabel) {
-    var ctx = document.getElementById('scatterPlot').getContext('2d');
-    ctx = new Chart(ctx, {
+    var chart = document.getElementById('scatterPlot').getContext('2d');
+    ctx = new Chart(chart, {
         type: 'scatter',
         data: {
             datasets: [{
@@ -122,6 +139,9 @@ function makeChart(data, xlabel, ylabel) {
             },
             legend: {
                 display: false
+            },
+            chartArea: {
+                backgroundColor: 'rgba(255, 255, 255, 0.1)'
             }
         }
     });
