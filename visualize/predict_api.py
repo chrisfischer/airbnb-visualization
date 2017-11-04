@@ -41,7 +41,7 @@ def get_best_price(o):
     results = sorted(results, key=lambda d: (d['weight'],d['price']), reverse=True)
 
     # average price of top 20
-    price = round(np.mean([d['price'] for d in results[:20]]),2)
+    price = round(np.mean([d['price'] for d in results[:20]]), 2)
     
     return price
 
