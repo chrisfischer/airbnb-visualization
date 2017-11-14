@@ -13,6 +13,14 @@ from .mortgage import Mortgage
 
 INTEREST_RATE = 0.0375
 
+'''
+PREDICT_API:
+
+    price: given coordinates, return the best listing price
+    income: given coordinates and street address+zipcode, return the estimated weekly income
+
+'''
+
 # handles the differnt options of this api
 def predict_handler(o):
     if 'price' in o:

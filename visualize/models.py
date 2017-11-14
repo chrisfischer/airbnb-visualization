@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-# Create your models here.
+# Listing model for the database
 class Listing(models.Model):
 	id = models.IntegerField(primary_key=True)
 	listing_url = models.CharField(max_length=300)
@@ -101,6 +101,7 @@ class Listing(models.Model):
 	calculated_host_listings_count = models.IntegerField()
 	reviews_per_month = models.DecimalField(max_digits=5, decimal_places=2)
 
+	# helper function that returns just the numerical fields and their respective 'pretty' names
 	def get_numerical_fields():
 		return {
 			'Len. Summary': 'length(summary)',

@@ -7,7 +7,7 @@ from django.db.models.functions import Length
 from .models import Listing
 
 '''
-API:
+API - offers a way to pull data from the database:
     fields: fields from models.Listing to be queried
 
     plot: Lets you create aliases for variables. Need the same number of aliases as fields. Also filters null values.
